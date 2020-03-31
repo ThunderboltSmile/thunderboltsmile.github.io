@@ -1,13 +1,14 @@
 sudo: true
 language: node_js
 node_js:
-  - 12.12.0 # use nodejs v10 LTS
-cache: npm
+  - 10 # use nodejs v10 LTS
+cache: yarn
 branches:
   only:
     - source # build master branch only
 script:
-  - hexo generate # generate static files
+  - yarn build
+  #- hexo generate # generate static files
 after_script:
     - cd ./public
     - git init
