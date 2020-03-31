@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 韭菜日记
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: 山羁
 language: en
 timezone: ''
 
@@ -105,3 +105,7 @@ pandoc:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+math:
+  enable: true
+  engine: mathjax

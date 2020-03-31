@@ -71,7 +71,7 @@ footer:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -88,14 +88,13 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
-  home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
-  archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  home: /|| home
+  about: /about/|| user
+  tags: /tags/|| tags
+  categories: /categories/|| th
+  archives: /archives/|| archive
+  schedule: /schedule/|| calendar
+  sitemap: /sitemap.xml|| sitemap
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -107,10 +106,10 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+# scheme: Pisces
+# scheme: Mist
+# scheme: Pisces
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -178,7 +177,7 @@ sidebar:
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
+  display: hide
   #display: always
   #display: hide
   #display: remove
@@ -709,7 +708,7 @@ canvas_nest: false
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
 # three_waves
-three_waves: false
+three_waves: true
 # canvas_lines
 canvas_lines: false
 # canvas_sphere
@@ -784,7 +783,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
+  canvas_nest: true
 
   # three
   three:
