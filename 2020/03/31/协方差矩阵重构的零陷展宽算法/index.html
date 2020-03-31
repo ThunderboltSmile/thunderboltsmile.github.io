@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +87,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/03/31/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E9%87%8D%E6%9E%84%E7%9A%84%E9%9B%B6%E9%99%B7%E5%B1%95%E5%AE%BD%E7%AE%97%E6%B3%95/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E9%87%8D%E6%9E%84%E7%9A%84%E9%9B%B6%E9%99%B7%E5%B1%95%E5%AE%BD%E7%AE%97%E6%B3%95/nulling_widen_deep.png">
 <meta property="og:image" content="http://yoursite.com/2020/03/31/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E9%87%8D%E6%9E%84%E7%9A%84%E9%9B%B6%E9%99%B7%E5%B1%95%E5%AE%BD%E7%AE%97%E6%B3%95/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E9%87%8D%E6%9E%84%E7%9A%84%E9%9B%B6%E9%99%B7%E5%B1%95%E5%AE%BD%E7%AE%97%E6%B3%95/nulling_widen_wide.png">
 <meta property="article:published_time" content="2020-03-31T15:41:08.569Z">
-<meta property="article:modified_time" content="2020-03-31T16:19:57.008Z">
+<meta property="article:modified_time" content="2020-03-31T16:30:00.307Z">
 <meta property="article:author" content="山羁">
 <meta property="article:tag" content="零陷">
 <meta property="article:tag" content="阵列信号处理">
@@ -101,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '6.0.0',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -379,7 +379,7 @@
 <p>在2012年，Y.Gu提出了一种通过利用Capon谱对干扰角度区域阵列流形的协方差矩阵求和，进而获得干扰加噪声协方差矩阵估计的方法。</p>
 <a id="more"></a>
 <p>其空间谱密度函数为 <span class="math display">\[
-\sqrt { { b^2 } -4ac }
+\sqrt { { b^2 } - 4ac }
 \]</span> 通过对Capon谱在干扰扇面阵列流形的协方差矩阵求和，获取其干扰加噪声协方差矩阵，</p>
 <p>其中<span class="math inline">\({R_x}\)</span>为阵列采样数据的协方差矩阵。$$为波束旁瓣区间，应保证期望信号不在该区间内。通过该方法展宽零陷后得到的权矢量为：</p>
 <p>该方法能够有效的将协方差矩阵中的期望信号分量滤除。但是如果接收信号中存在运动的强干扰时，算法性能会大幅下降。本部分结合了Y.Gu算法思想，使其具有零陷宽度与深度可调节的功能。首先利用Hanning窗对空间谱函数进行空域扩展，再利用类似Y.Gu的方法将展宽的谱函数筹够干扰加噪声协方差矩阵<span class="math inline">\({R_{in}}\)</span>，同时通过对空间谱函数增加深度系数进行控制，从而得到该方法的优化权矢量。</p>
@@ -618,7 +618,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.0</div>
 
 
 
@@ -717,13 +717,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
