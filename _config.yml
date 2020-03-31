@@ -93,10 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo
-math:
-  enable: false
-  engine: mathjax
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
