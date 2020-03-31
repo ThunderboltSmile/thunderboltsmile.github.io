@@ -95,7 +95,12 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: next
 
-
+pandoc:
+  filters:
+  extra:
+  template:
+  meta:
+  mathEngine:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
