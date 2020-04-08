@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>redux解析 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3/redux/redux%E8%A7%A3%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">redux解析</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T00:00:00+08:00">2017-09-11</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index">
+                    <span itemprop="name">框架相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>如果说react构成了web应用的骨架和血肉，那么redux则是web应用的内循环系统。redux定义了应用中数据流动的方式和细节，支持高度自由的扩展，让应用对数据的控制更加自由多变。</p>
+<a id="more"></a>
+
+<h4 id="redux目录结构"><a href="#redux目录结构" class="headerlink" title="redux目录结构"></a>redux目录结构</h4><p>redux的源代码很短，仅有的几个文件，实现了所有功能，就像对所有方法论的定义一样，高度抽象，仅仅指明了react应用的开发方式和数据管理规范。</p>
+<ul>
+<li>utils<ul>
+<li>warning.js [辅助]定义各种警告方式</li>
+</ul>
+</li>
+<li>applyMiddleware.js [核心]将中间件挂载到store上的方法</li>
+<li>bindActionCreators.js [辅助方法，非核心]将action生成器直接绑定给dispatch，在dispatch是自动执行action creator</li>
+<li>combineReducers.js [核心]将多个reducer封装成为一个根reducer</li>
+<li>compose.js [核心]在生成初始store的时候使用的关键函数</li>
+<li>createStore.js [核心]生成整个应用的store</li>
+<li>index.js 将api作为模块向外开放引用</li>
+</ul>
+<h4 id="从何说起"><a href="#从何说起" class="headerlink" title="从何说起"></a>从何说起</h4><p>初识redux，我也是一脸懵逼的读完了她的文档，并隐约感觉到这并不是最终的答案，单单引入redux是难以实现当前业务需求的。我知道了什么是action、什么事reducer、什么是store然后呢，异步的逻辑写在哪里？看过github上面一些项目，是将异步逻辑写到了action creator里面，但大多数是使用了第三方的中间件比如redux-thunk、saga等，当我知道redux-saga的时候，第一感觉是，天呐，我感觉自己还完全没有理解到redux是什么，就必须要去学习saga了吗？这对于一个严谨的人来说是违反常识的，但这也是react组件化思想的一种提现，各个模块之间的联系会非常密切，发展到了后面甚至会相互影响，以至于后来者会根本不知道从何处开始才能理清思路，在redux的文档中，就直接让读者根据redux-thunk的示例来编写中间件，这让原本就一头雾水的初学者难以理解。</p>
+<p>还有react-redux，这对初学者来说又是一个黑盒，当然如果有人要说，管他是不是黑盒呢，知道怎么用就行啦。那我是无法反驳的，毕竟当前前端圈子如此火热，框架层出不穷，开发需求也越来越多样化，哪有什么时间去管什么底层原理，框架内核。。。2333。</p>
+<p>理解一个框架，我认为就是与框架开发者进行交流，而且是深入的那种。框架的目的在于解决耦合问题，提供统一的方式来编写组件，不再过多的思考代码的模式，更加专注于业务逻辑。</p>
+<p>带着问题对框架进行探索，我认为是解读框架最恰当的方式，那我们现在就要明确一点，redux是解决什么问题的呢？上述内容已经指出了，redux本身并不能解决异步操作的问题，而是提供了接口让开发者自己实现异步的解决方案，而这个方案如何来编写，redux是不会跟你说清楚的，你如果自己理解了中间件的含义，自然就会懂。</p>
+<p>redux真正专注解决的是数据与表现分离，那么我们就应该明确，首先解决的是数据与表现分离，然后再考虑异步的问题，这样思路就会清晰很多。</p>
+<h4 id="入口文件"><a href="#入口文件" class="headerlink" title="入口文件"></a>入口文件</h4><p>就像许多的组件库一样，index.js将所有的api进行打包输出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">  createStore,</span><br><span class="line">  combineReducers,</span><br><span class="line">  bindActionCreators,</span><br><span class="line">  applyMiddleware,</span><br><span class="line">  compose</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按照顺序依次是createStore,combineReducers,bindActionCreators,applyMiddleWare,compose,接下来的讲解也将按照如下方式</p>
+<h4 id="createStore"><a href="#createStore" class="headerlink" title="createStore"></a>createStore</h4><p>我遇到一个问题，是否应该贴出源码呢？或者说，源码解读是否必须要源码，我认为是不必要的，源码可以在github上面找到，完全没有必要在这里贴出来，当读者阅读到这里的时候，就应该去github上面下载一份源码并用编辑器打开了。</p>
+<p>createStore顾名思义就是创建用于管理应用状态的函数，而创建后的状态怎么拿到呢？你想想可能让你直接拿到原始状态吗，这么重要的东西肯定要放闭包里保护起来塞，因此返回的是一组API，提供了获取和改变状态的接口，这样你想对state做什么事情就都在redux的监控之下了。</p>
+<h4 id="applyMiddleWare"><a href="#applyMiddleWare" class="headerlink" title="applyMiddleWare"></a>applyMiddleWare</h4><p>这应该是理解redux模式最最重要的一部分了，源码我觉得完全没有必要贴出来，因为那只会让人更加困惑，我只消做一个比喻，估计大家就能够明白了。<br>这个比喻的喻体叫做洋葱，而本体就是被中间件层层包裹住的reducer函数，当我们通过action访问reducer函数的时候，会从外至内地经历applyMiddleWare中加入的中间件函数，因此，我们可以在这些中间件中加入处理异步的逻辑，甚至是结合promise延迟某些action的行为，在理解了这一点后，redux便是一件非常趁手的工具，不然就是一块烫手的山芋。<br>编写中间时，应该保证将从最外层传入的action向内传递，若发生action的丢失，则中间件会失去连接的作用。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/redux/" rel="tag"># redux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/09/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" rel="next" title="JavaScript设计模式--模板方法模式">
+                <i class="fa fa-chevron-left"></i> JavaScript设计模式--模板方法模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/27/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/pycookbook1/" rel="prev" title="python.cookbook读书笔记一">
+                python.cookbook读书笔记一 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#redux目录结构"><span class="nav-number">1.</span> <span class="nav-text">redux目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从何说起"><span class="nav-number">2.</span> <span class="nav-text">从何说起</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入口文件"><span class="nav-number">3.</span> <span class="nav-text">入口文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#createStore"><span class="nav-number">4.</span> <span class="nav-text">createStore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#applyMiddleWare"><span class="nav-number">5.</span> <span class="nav-text">applyMiddleWare</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

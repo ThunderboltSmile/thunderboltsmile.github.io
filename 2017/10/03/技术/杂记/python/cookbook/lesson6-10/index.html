@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>python.cookbook读书笔记二 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/lesson6-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">python.cookbook读书笔记二</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T00:00:00+08:00">2017-10-03</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第一章主要包含的内容是以数据结构为主，在前五节中主要了解了解构赋值和解构赋值中占位符<code>_</code>和<code>*</code>的使用方法，以及在保留有限个数的元素时<code>dequeue</code>的用法，最后是学习了<code>heapq</code>的使用情境及方法</p>
+<a id="more"></a>
+
+<h4 id="1-6-将dictionary中的key对应到多个数值"><a href="#1-6-将dictionary中的key对应到多个数值" class="headerlink" title="1.6 将dictionary中的key对应到多个数值"></a>1.6 将dictionary中的key对应到多个数值</h4><p>通常情况下，字典中的键值对是一一对应的关系，当我们想要在字典中使用一个键来保存多个值时，就需要将这多个值使用其他的容器包装起来，比如list和set，到底是使用list还是set要根据具体情况而定，当使用者想要按照一定顺序排列这些值时，就是用list，当想要避免值重复时，就是用set。</p>
+<p>原则上讲，创建一个一键多值的字典并不困难，但是初始化这个字典的却会是一件繁琐的事，因此我们应该使用defaultdict来创建这样的数据结构<br>使用defaultdict创建的字典会在使用者访问起不存在的键名时自动创建和初始化这个键名对应的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">d=defaultdict(list)</span><br><span class="line">f=defaultdict(set)</span><br><span class="line"></span><br><span class="line">d[<span class="string">'a'</span>].append(<span class="string">'a'</span>)</span><br><span class="line">d[<span class="string">'a'</span>].append(<span class="string">'b'</span>)</span><br><span class="line">d[<span class="string">'a'</span>].append(<span class="string">'b'</span>)</span><br><span class="line">d[<span class="string">'a'</span>].append(<span class="string">'c'</span>)</span><br><span class="line"></span><br><span class="line">f[<span class="string">'a'</span>].add(<span class="string">'a'</span>)</span><br><span class="line">f[<span class="string">'a'</span>].add(<span class="string">'b'</span>)</span><br><span class="line">f[<span class="string">'a'</span>].add(<span class="string">'b'</span>)</span><br><span class="line">f[<span class="string">'a'</span>].add[<span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line">d[<span class="string">'a'</span>] <span class="comment">#['a','b','b','c']</span></span><br><span class="line">f[<span class="string">'a'</span>] <span class="comment">#&#123;'b','c','a'&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-7-让字典内容保持一定的顺序"><a href="#1-7-让字典内容保持一定的顺序" class="headerlink" title="1.7 让字典内容保持一定的顺序"></a>1.7 让字典内容保持一定的顺序</h4><h5 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h5><p>当我们想要控制字典中内容的顺序时，可以使用<code>collections</code>模块儿中的<code>OrderedDict</code>，其在遍历时会按照数据插入的顺序进行。</p>
+<h5 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h5><p><code>OrderedDict</code>在内部会同时保存一个记录元素插入顺序的list，当一条数据被新插入字典中时，会被记录在list的末尾，重新对该键进行赋值时，list的顺序不会发生变化。因此，<code>OrderedDict</code>的大小会比普通字典的两倍还要大，这在使用时应该加以权衡。</p>
+<h4 id="1-8-对字典内容进行计算"><a href="#1-8-对字典内容进行计算" class="headerlink" title="1.8 对字典内容进行计算"></a>1.8 对字典内容进行计算</h4><p>当我们想要对字典内容进行计算时，可能免不了要同时获得字典内容的键名和键值，这其实是一件挺麻烦的事，尤其是对于诸如找出字典中最大值或者最小值这种操作来讲。这种时候，我们可能就需要一种发放直接将字典转换成list来进行比较。<br>在<code>collections</code>模块儿中有一种方法叫做<code>zip</code>，这种方法可以讲字典内容转换成list，如下所示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">prices=&#123;</span><br><span class="line">	<span class="string">'ACME'</span>:<span class="number">45.23</span>,</span><br><span class="line">	<span class="string">'AAPL'</span>:<span class="number">612.78</span>,</span><br><span class="line">	<span class="string">'IBM'</span>:<span class="number">205.55</span></span><br><span class="line">&#125;</span><br><span class="line">prices_sorted = sorted(zip(prices.values(),prices.keys()))</span><br><span class="line"><span class="comment">#prices_sorted is [(45.23,'ACME'),(205.55,'IBM'),(612.78,'AAPL')]</span></span><br><span class="line">min_price = min(zip(prices.values(),prices.keys()))</span><br><span class="line"><span class="comment">#min_price is (45.23,'ACME')</span></span><br></pre></td></tr></table></figure>
+<h5 id="discussion-1"><a href="#discussion-1" class="headerlink" title="discussion"></a>discussion</h5><p>zip会将字典键值对转化为以给定内容和形式为单位的序列，并可以对其进行遍历。<br>应当注意的是，zip每次会产生一个只能使用一次的iterator，当本次循环结束后，再次使用这个iterator会出错。</p>
+<h4 id="1-9寻找两个字典中的公有量"><a href="#1-9寻找两个字典中的公有量" class="headerlink" title="1.9寻找两个字典中的公有量"></a>1.9寻找两个字典中的公有量</h4><p>在python中，可以将其键和值提取出来作为集合进行运算，通常使用的方法有<code>dict.keys()</code>、<code>dict.items()</code>。<br>如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;</span><br><span class="line">	<span class="string">'x'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'y'</span>:<span class="number">2</span>,</span><br><span class="line">	<span class="string">'z'</span>:<span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line">b=&#123;</span><br><span class="line">	<span class="string">'w'</span>:<span class="number">10</span>,</span><br><span class="line">	<span class="string">'x'</span>:<span class="number">11</span>,</span><br><span class="line">	<span class="string">'y'</span>:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># use keys() or items() to filter dict</span></span><br><span class="line"><span class="comment"># find keys in common</span></span><br><span class="line">a.keys() &amp; b.keys() <span class="comment">#&#123;'x','y'&#125;</span></span><br><span class="line"><span class="comment"># find keys in a that are not in b</span></span><br><span class="line">a.keys() - b.keys() <span class="comment">#&#123;'z'&#125;</span></span><br><span class="line"><span class="comment"># find (key,value) pairs in common</span></span><br><span class="line">a.items() &amp; b.items() <span class="comment">#&#123;('y',2)&#125; </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># make a dict with certain keys removed</span></span><br><span class="line">c=&#123;key:a[key] <span class="keyword">for</span> key <span class="keyword">in</span> a.keys() - &#123;<span class="string">'z'</span>,<span class="string">'w'</span>&#125;&#125;</span><br><span class="line"><span class="comment"># c is &#123;'x':1,'y':2&#125;</span></span><br></pre></td></tr></table></figure>
+<p>由于字典的<code>value</code>不能保证唯一性，因此不能对其进行集合运算。</p>
+<h4 id="1-10-保持序列顺序的同时删除重复的元素"><a href="#1-10-保持序列顺序的同时删除重复的元素" class="headerlink" title="1.10 保持序列顺序的同时删除重复的元素"></a>1.10 保持序列顺序的同时删除重复的元素</h4><p>如果仅仅是想要删除序列中重复的部分，那么使用<code>set</code>即可很方便地解决，但是set并不能保证结果的有序性，因此我们采用generator函数的方式来得到去重后的结果，如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dedupe</span><span class="params">(items, key=None)</span>:</span></span><br><span class="line">    seen = set()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        val=item <span class="keyword">if</span> key <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">else</span> key(item)</span><br><span class="line">        <span class="keyword">if</span> val <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line">            seen.add(val)</span><br><span class="line"></span><br><span class="line">a=[&#123;<span class="string">'x'</span>:<span class="number">1</span>,<span class="string">'y'</span>:<span class="number">2</span>,<span class="string">'z'</span>:<span class="number">3</span>&#125;,&#123;<span class="string">'x'</span>:<span class="number">2</span>,<span class="string">'y'</span>:<span class="number">3</span>,<span class="string">'z'</span>:<span class="number">5</span>&#125;,&#123;<span class="string">'x'</span>:<span class="number">1</span>,<span class="string">'y'</span>:<span class="number">2</span>,<span class="string">'z'</span>:<span class="number">3</span>&#125;]</span><br><span class="line">print(list(dedupe(a,key=<span class="keyword">lambda</span> d: (d[<span class="string">'x'</span>],d[<span class="string">'y'</span>]))))</span><br><span class="line"><span class="comment">#[&#123;'x': 1, 'y': 2, 'z': 3&#125;, &#123;'x': 2, 'y': 3, 'z': 5&#125;]</span></span><br></pre></td></tr></table></figure>
+<p>解释：我们利用set的特性进行去重，但是以generator的形式来从序列中依次取得未重复的元素，当序列元素为unhashable时，可以传入参数函数key对其进行处理。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/27/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/pycookbook1/" rel="next" title="python.cookbook读书笔记一">
+                <i class="fa fa-chevron-left"></i> python.cookbook读书笔记一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/10/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/lesson11-15/" rel="prev" title="python.cookbook读书笔记三">
+                python.cookbook读书笔记三 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-将dictionary中的key对应到多个数值"><span class="nav-number">1.</span> <span class="nav-text">1.6 将dictionary中的key对应到多个数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-让字典内容保持一定的顺序"><span class="nav-number">2.</span> <span class="nav-text">1.7 让字典内容保持一定的顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#solution"><span class="nav-number">2.1.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion"><span class="nav-number">2.2.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8-对字典内容进行计算"><span class="nav-number">3.</span> <span class="nav-text">1.8 对字典内容进行计算</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion-1"><span class="nav-number">3.1.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9寻找两个字典中的公有量"><span class="nav-number">4.</span> <span class="nav-text">1.9寻找两个字典中的公有量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-10-保持序列顺序的同时删除重复的元素"><span class="nav-number">5.</span> <span class="nav-text">1.10 保持序列顺序的同时删除重复的元素</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

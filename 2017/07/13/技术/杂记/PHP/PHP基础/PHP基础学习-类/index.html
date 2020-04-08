@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>PHP基础学习--类和对象 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">PHP基础学习--类和对象</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">2017-07-13</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>类和对象是语言用于构建程序的基本的component，PHP中的对象和类也不例外，我们可以将相关的操作通过类封装成不同的模块加以复用，即可构建出强大灵活的应用程序。</p>
+<a id="more"></a>
+<h4 id="定义类及其方法"><a href="#定义类及其方法" class="headerlink" title="定义类及其方法"></a>定义类及其方法</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//定义一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $name = <span class="string">'汽车'</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实例化一个car对象</span></span><br><span class="line">$car = <span class="keyword">new</span> Car();</span><br><span class="line">$car-&gt;name = <span class="string">'奥迪A6'</span>; <span class="comment">//设置对象的属性值</span></span><br><span class="line"><span class="keyword">echo</span> $car-&gt;getName();  <span class="comment">//调用对象的方法 输出对象的名字</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="public、protected、private属性的区别"><a href="#public、protected、private属性的区别" class="headerlink" title="public、protected、private属性的区别"></a>public、protected、private属性的区别</h4><p>在声明类属性时，默认都为public，外部可以访问。一般通过<code>-&gt;</code>对象操作符来访问对象的属性或者方法，对于静态属性则使用<code>::</code>双冒号进行访问。当在类成员方法内部调用的时候，可以使用<code>$this</code>伪变量调用当前对象的属性。<br>受保护的属性(protected)与私有属性(private)不允许外部调用，在类的成员方法内部是可以调用的。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $name=<span class="string">"汽车"</span>;</span><br><span class="line">    <span class="keyword">protected</span> $color=<span class="string">"白色"</span>;</span><br><span class="line">    <span class="keyword">private</span> $price=<span class="string">"1000000"</span>;</span><br><span class="line">    <span class="keyword">public</span> getColor()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car=<span class="keyword">new</span> Car();</span><br><span class="line"><span class="keyword">echo</span> $car-&gt;name;</span><br><span class="line"><span class="keyword">echo</span> $car-&gt;getColor();<span class="comment">//"白色",类的成员方法可以调用内部属性</span></span><br><span class="line"><span class="keyword">echo</span> $car-&gt;color;<span class="comment">//出错</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方法、静态方法"><a href="#方法、静态方法" class="headerlink" title="方法、静态方法"></a>方法、静态方法</h4><p>方法就是在类中的function，很多时候我们分不清方法与函数有什么差别，在面向过程的程序设计中function叫做函数，在面向对象中function则被称之为方法。使用关键字<code>static</code>修饰的，称之为静态方法，静态方法不需要实例化对象，可以通过类名直接调用，操作符为双冒号<code>::</code>。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'汽车'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">​&#125;</span><br><span class="line"><span class="keyword">echo</span> Car::getName(); <span class="comment">//结果为“汽车”</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="构造函数、析构函数"><a href="#构造函数、析构函数" class="headerlink" title="构造函数、析构函数"></a>构造函数、析构函数</h4><p>在类中使用<code>__construct()</code>定义一个构造函数，具有构造函数的类，会在每次对象创建的时候调用该函数，因此常用来在对象创建的时候进行一些初始化工作。<br>在子类中如果定义了<code>__construct</code>则不会调用父类的<code>__construct</code>，如果需要同时调用父类的构造函数，需要使用<code>parent::__construct()</code>显式的调用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">print</span> <span class="string">"父类构造函数被调用\n"</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Truck</span> <span class="keyword">extends</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">print</span> <span class="string">"子类构造函数被调用\n"</span>;</span><br><span class="line">       <span class="keyword">parent</span>::__construct();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car = <span class="keyword">new</span> Truck();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>析构函数使用<code>__destruct()</code>进行定义,析构函数指的是当某个对象的所有引用被删除，或者对象被显式的销毁时会执行的函数。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">print</span> <span class="string">"构造函数被调用 \n"</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">print</span> <span class="string">"析构函数被调用 \n"</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car = <span class="keyword">new</span> Car(); <span class="comment">//实例化时会调用构造函数</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'使用后，准备销毁car对象 \n'</span>;</span><br><span class="line"><span class="keyword">unset</span>($car); <span class="comment">//销毁时会调用析构函数</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h4><p>static用于定义类中的静态属性和方法。静态属性与方法可以在不实例化类的情况下调用，直接使用类名<code>::</code>方法名的方式进行调用。静态属性不允许对象使用<code>-&gt;</code>操作符调用。<br>静态方法中，<code>$this</code>伪变量不允许使用。可以使用<code>self，parent，static</code>在内部调用静态方法与属性。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> $speed = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getSpeed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$speed;<span class="comment">//不允许使用$this</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">speedUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$speed+=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigCar</span> <span class="keyword">extends</span> <span class="title">Car</span> </span>&#123;<span class="comment">//继承了Car</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::speedUp();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$func = <span class="string">'getSpeed'</span>;</span><br><span class="line">BigCar::start();</span><br><span class="line"><span class="keyword">echo</span> BigCar::$func();<span class="comment">//可以使用引用类型来表示方法名</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h4><p>被定义为public的类成员可以在任何地方被访问。被定义为protected的类成员则可以被其自身以及其子类和父类访问。被定义为private的类成员则只能被其定义所在的类访问。若方法采用<code>var</code>定义，则被视为公有。<br>如果构造函数定义成了私有方法，则不允许直接实例化对象了，这时候一般通过静态方法进行实例化，在设计模式中会经常使用这样的方法来控制对象的创建，比如单例模式只允许有一个全局唯一的对象。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'object create'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> $_object = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="keyword">self</span>::$_object)) &#123;</span><br><span class="line">            <span class="keyword">self</span>::$_object = <span class="keyword">new</span> Car(); <span class="comment">//内部方法可以调用私有方法，因此这里可以创建对象</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$_object;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//$car=new Car();//这里不允许直接实例化对象</span></span><br><span class="line">$car=Car::getInstance();<span class="comment">//通过静态方法来获得一个实例</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>PHP中的重载指的是动态的创建属性与方法，是通过魔术方法来实现的。属性的重载通过<code>__set</code>，<code>__get</code>，<code>__isset</code>，<code>__unset</code>来分别实现对不存在属性的赋值、读取、判断属性是否设置、销毁属性。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $ary=<span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__set</span><span class="params">($key, $val)</span></span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;ary[$key] = $val;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__get</span><span class="params">($key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">$this</span>-&gt;ary[$key]))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;ary[$key];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__isset</span><span class="params">($key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">$this</span>-&gt;ary[$key]))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__unset</span><span class="params">($key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">unset</span>(<span class="keyword">$this</span>-&gt;ary[$key]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car = <span class="keyword">new</span> Car();</span><br><span class="line">$car-&gt;name = <span class="string">'汽车'</span>;<span class="comment">//name属性动态创建并赋值</span></span><br><span class="line"><span class="keyword">echo</span> $car-&gt;name;<span class="comment">//'汽车'</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>方法的重载通过<code>__call</code>来实现，当调用不存在的方法的时候，将会转为参数调用<code>__call</code>方法，当调用不存在的静态方法时会使用<code>__callStatic</code>重载。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $speed = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__call</span><span class="params">($name,$args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>($name==<span class="string">'speedUp'</span>)&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;speed+=<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car=<span class="keyword">new</span> Car();</span><br><span class="line">$car-&gt;speedUp(); <span class="comment">//调用不存在的方法会使用重载</span></span><br><span class="line"><span class="keyword">echo</span> $car-&gt;speed;<span class="comment">//10</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="比较、复制、序列化"><a href="#比较、复制、序列化" class="headerlink" title="比较、复制、序列化"></a>比较、复制、序列化</h4><h5 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h5><p>当同一个类的<code>两个实例的所有属性都相等</code>时，可以使用比较运算符<code>==</code>进行判断，当需要判断<code>两个变量是否为同一个对象的引用</code>时，可以使用全等运算符<code>===</code>进行判断。</p>
+<h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><p>在一些特殊情况下，可以通过关键字<code>clone</code>来复制一个对象，这时<code>__clone</code>方法会被调用，通过这个魔术方法来设置属性的值。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $name=<span class="string">'car'</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $obj=<span class="keyword">new</span> Car();</span><br><span class="line">        $obj-&gt;name=<span class="keyword">$this</span>-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$a=<span class="keyword">new</span> Car();</span><br><span class="line">$a-&gt;name=<span class="string">'new car'</span>;</span><br><span class="line">$b=<span class="keyword">clone</span> $a;</span><br><span class="line">var_dump($b);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h5><p>可以通过<code>serialize</code>方法将对象序列化为字符串，用于<code>存储或者传递数据</code>，然后在需要的时候通过<code>unserialize</code>将字符串反序列化成对象进行使用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $name = <span class="string">'car'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        $obj = <span class="keyword">new</span> Car();</span><br><span class="line">        $obj-&gt;name = <span class="keyword">$this</span>-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$a = <span class="keyword">new</span> Car();</span><br><span class="line">$str = serialize($a); <span class="comment">//对象序列化成字符串</span></span><br><span class="line"><span class="keyword">echo</span> $str.<span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">$c = unserialize($str); <span class="comment">//反序列化为对象</span></span><br><span class="line">var_dump($c);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">O:3:"Car":1:&#123;s:4:"name";s:3:"car";&#125;</span><br><span class="line"><span class="meta">object(Car)#</span><span class="bash">3 (1) &#123;</span></span><br><span class="line">["name"]=&gt;</span><br><span class="line">string(3) "car"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>感觉这个序列化貌似并不常用，即使序列化了也还是只有PHP的反序列化方法可以识别并反序列化。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"># 基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/12/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-%E6%95%B0%E7%BB%84/" rel="next" title="PHP基础学习--数组">
+                <i class="fa fa-chevron-left"></i> PHP基础学习--数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/14/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0--%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="PHP基础学习--正则表达式">
+                PHP基础学习--正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义类及其方法"><span class="nav-number">1.</span> <span class="nav-text">定义类及其方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#public、protected、private属性的区别"><span class="nav-number">2.</span> <span class="nav-text">public、protected、private属性的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法、静态方法"><span class="nav-number">3.</span> <span class="nav-text">方法、静态方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数、析构函数"><span class="nav-number">4.</span> <span class="nav-text">构造函数、析构函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#static关键字"><span class="nav-number">5.</span> <span class="nav-text">static关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问控制"><span class="nav-number">6.</span> <span class="nav-text">访问控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重载"><span class="nav-number">7.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较、复制、序列化"><span class="nav-number">8.</span> <span class="nav-text">比较、复制、序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#比较"><span class="nav-number">8.1.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-number">8.2.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#序列化"><span class="nav-number">8.3.</span> <span class="nav-text">序列化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

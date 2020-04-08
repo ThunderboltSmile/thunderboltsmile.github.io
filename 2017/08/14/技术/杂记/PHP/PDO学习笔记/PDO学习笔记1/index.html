@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>PDO简介 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PDO%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PDO%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">PDO简介</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T00:00:00+08:00">2017-08-14</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="PDO简介"><a href="#PDO简介" class="headerlink" title="PDO简介"></a>PDO简介</h3><p>在PHP开发中，与数据库的交互始终是个绕不开的话题，PHP虽然原生支持许多中数据库，但是对数据库的具体支持程度并不太理想，而PDO<code>PHP Data Objects</code>则是我们在大多数场景下使用的数据库连接工具。</p>
+<blockquote>
+<p>摘自PHP手册：<br>The PHP Data Objects (PDO) extension defines a lightweight, consistent interface for accessing databases in PHP. Each database driver that implements the PDO interface can expose database-specific features as regular extension functions.<br>regardless of which database you’re using, you use the same functions to issue queries and fetch data.</p>
+</blockquote>
+<p>也就是说，PDO提供了一个操作数据库的统一接口，我们可以使用相同的方式去执行SQL命令而不需要关心面对的是什么类型的数据库。</p>
+<a id="more"></a>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在安装好mariadb，mysql等软件后，安装与当前PHP版本相符的PDO，在php.ini中打开相应的扩展即可，如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;;;;;;;;;;;;;;;;;;;</span><br><span class="line">; extnsions ;</span><br><span class="line">;;;;;;;;;;;;;;;;;;;</span><br><span class="line"></span><br><span class="line">extension=mysql.so</span><br><span class="line">extension=pdo.so</span><br></pre></td></tr></table></figure>
+
+<h3 id="预定义常量"><a href="#预定义常量" class="headerlink" title="预定义常量"></a>预定义常量</h3><p>这里仅就某几个常用的常量作简要介绍</p>
+<h4 id="PDO-FETCH-LAZY-integer"><a href="#PDO-FETCH-LAZY-integer" class="headerlink" title="PDO::FETCH_LAZY(integer)"></a>PDO::FETCH_LAZY(integer)</h4><blockquote>
+<p>Specifies that the fetch method shall return each row as an object with variable names that correspond to the column names returned in the result set.</p>
+</blockquote>
+<p>即返回一个描述了结果集信息的对象，以列名为键名，以列值为键值。</p>
+<h4 id="PDO-FETCH-ASSOC-integer"><a href="#PDO-FETCH-ASSOC-integer" class="headerlink" title="PDO::FETCH_ASSOC(integer)"></a>PDO::FETCH_ASSOC(integer)</h4><blockquote>
+<p>Specifies that the fetch method shall return each row as an array indexed by column name as returned in the corresponding result set. If the result set contains multiple columns with the same name, PDO::FETCH_ASSOC returns only a single value per column name.</p>
+</blockquote>
+<p>将结果集的每一行返回一个以列名作为索引，列值作为数组元素的值的数组，倘若同一结果集中存在相同列名的两列数据，该方法仅能返回其中一列。</p>
+<h4 id="PDO-FETCH-NAMED-integer"><a href="#PDO-FETCH-NAMED-integer" class="headerlink" title="PDO::FETCH_NAMED(integer)"></a>PDO::FETCH_NAMED(integer)</h4><blockquote>
+<p>Specifies that the fetch method shall return each row as an array indexed by column name as returned in the corresponding result set. If the result set contains multiple columns with the same name, PDO::FETCH_NAMED returns an array of values per column name.</p>
+</blockquote>
+<p>基本功能与<code>PDO::FETCH_ASSOC</code>相似，只不过在存在多列结果集重名时，以该重名键名对应的数组值为一个数组，该数组包含了结果集中以此键名为名的结果。</p>
+<h4 id="PDO-FETCH-NUM-integer"><a href="#PDO-FETCH-NUM-integer" class="headerlink" title="PDO::FETCH_NUM(integer)"></a>PDO::FETCH_NUM(integer)</h4><blockquote>
+<p>Specifies that the fetch method shall return each row as an array indexed by column number as returned in the corresponding result set, starting at column 0.</p>
+</blockquote>
+<p>将结果集的每一行以数值索引（按照列的排列顺序）为键名的数组的形式返回。也就是你不知道该结果每一个值代表的是什么意义，只能知道其所在的列在表中的位置。</p>
+<h4 id="PDO-FETCH-BOTH-integer"><a href="#PDO-FETCH-BOTH-integer" class="headerlink" title="PDO::FETCH_BOTH(integer)"></a>PDO::FETCH_BOTH(integer)</h4><blockquote>
+<p>Specifies that the fetch method shall return each row as an array indexed by both column name and number as returned in the corresponding result set, starting at column 0.</p>
+</blockquote>
+<p>返回一个索引数组，以列明和列序为键名表达同一列的值，结果相间排列。即<code>[0]=&gt;value0,[name0]=&gt;value0,[1]=&gt;value1,[name1]=&gt;value1</code>。</p>
+<h4 id="PDO-FETCH-OBJ-integer"><a href="#PDO-FETCH-OBJ-integer" class="headerlink" title="PDO::FETCH_OBJ(integer)"></a>PDO::FETCH_OBJ(integer)</h4><blockquote>
+<p>Specifies that the fetch method shall return each row as an object with property names that correspond to the column names returned in the result set.</p>
+</blockquote>
+<p>将结果集的每一行以以列名为键名，以列值为键值的对象的形式返回。</p>
+<h3 id="通过PDO连接数据库"><a href="#通过PDO连接数据库" class="headerlink" title="通过PDO连接数据库"></a>通过PDO连接数据库</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//在此载入配置文件中的用户名、密码等数据库配置信息</span></span><br><span class="line">$dsn=<span class="string">'mysql:host=localhost;dbname=mydb;charset=utf8'</span>;</span><br><span class="line">$user=<span class="string">'root'</span>;</span><br><span class="line">$pass=<span class="string">'pass'</span>;</span><br><span class="line">$dbh = <span class="keyword">new</span> PDO($dsn, $user, $pass);</span><br><span class="line"><span class="comment">// 在此使用连接</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在运行完成，在此关闭连接</span></span><br><span class="line">$dbh = <span class="keyword">null</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PDO/" rel="tag"># PDO</a>
+          
+            <a href="/tags/MYSQL/" rel="tag"># MYSQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/14/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" rel="next" title="JavaScript设计模式--单例模式">
+                <i class="fa fa-chevron-left"></i> JavaScript设计模式--单例模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/14/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/php%E9%85%8D%E7%BD%AE%E6%94%AF%E6%8C%81%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" rel="prev" title="配置php.ini以及文件夹权限使nginx支持图片上传">
+                配置php.ini以及文件夹权限使nginx支持图片上传 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PDO简介"><span class="nav-number">1.</span> <span class="nav-text">PDO简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预定义常量"><span class="nav-number">3.</span> <span class="nav-text">预定义常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PDO-FETCH-LAZY-integer"><span class="nav-number">3.1.</span> <span class="nav-text">PDO::FETCH_LAZY(integer)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PDO-FETCH-ASSOC-integer"><span class="nav-number">3.2.</span> <span class="nav-text">PDO::FETCH_ASSOC(integer)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PDO-FETCH-NAMED-integer"><span class="nav-number">3.3.</span> <span class="nav-text">PDO::FETCH_NAMED(integer)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PDO-FETCH-NUM-integer"><span class="nav-number">3.4.</span> <span class="nav-text">PDO::FETCH_NUM(integer)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PDO-FETCH-BOTH-integer"><span class="nav-number">3.5.</span> <span class="nav-text">PDO::FETCH_BOTH(integer)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PDO-FETCH-OBJ-integer"><span class="nav-number">3.6.</span> <span class="nav-text">PDO::FETCH_OBJ(integer)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过PDO连接数据库"><span class="nav-number">4.</span> <span class="nav-text">通过PDO连接数据库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

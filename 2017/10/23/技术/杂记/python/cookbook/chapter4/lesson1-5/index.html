@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>python.cookbook读书笔记五 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/chapter4/lesson1-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">python.cookbook读书笔记五</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-23T00:00:00+08:00">2017-10-23</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="chapter4-iterators-and-generators"><a href="#chapter4-iterators-and-generators" class="headerlink" title="chapter4 iterators and generators"></a>chapter4 iterators and generators</h3><p>Iteration是python中最强大的特性之一，很多时候，你有可能只是看到使用iterator来产生特定的序列。然而，iterator还有更多的可能，比如一些非常好用的工具函数，创建自己的generator函数等等，这一章将主要介绍使用iteration时会遇到的常见问题。</p>
+<a id="more"></a>
+
+<h4 id="4-1-manually-consuming-a-iterator"><a href="#4-1-manually-consuming-a-iterator" class="headerlink" title="4.1 manually consuming a iterator"></a>4.1 manually consuming a iterator</h4><h5 id="problem"><a href="#problem" class="headerlink" title="problem"></a>problem</h5><p>你想处理iterator中的数据，但由于某些原因不想使用for循环</p>
+<h5 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h5><p>使用next方法可以依次得到iterator的各个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'/etc/password'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span> :</span><br><span class="line">            line=next(f)</span><br><span class="line">            print(line,end=<span class="string">''</span>)</span><br><span class="line">        <span class="keyword">except</span> StopIteration:</span><br><span class="line">            <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>StopException用来标记迭代结束的情况，同样可以使用在line为None时break的方法结束循环。</p>
+<h5 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h5><p>在使用next方法时，其实是调用了iterator的<code>__next__</code>方法，当我们使用iter方法初始化某个iterable，我们实际调用的是<code>__iter__</code>方法。</p>
+<h4 id="4-2-delegeting-iteration"><a href="#4-2-delegeting-iteration" class="headerlink" title="4.2 delegeting iteration"></a>4.2 delegeting iteration</h4><h5 id="problem-1"><a href="#problem-1" class="headerlink" title="problem"></a>problem</h5><p>在你自定义的容器中，保存了一个iterable的数据结构，你想要使得这个容器拥有iterable的性质，即可以通过对容器的迭代来获取内部这个iterable数据块的内容。</p>
+<h5 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h5><p>结合上一节，在进行迭代操作时，实际调用了<code>__iter__</code>方法，因此你只需要在容器中自定义<code>__iter__</code>方法即可：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,value)</span>:</span></span><br><span class="line">        self._value=value</span><br><span class="line">        self._children=[]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Node(&#123;!r&#125;)'</span>.format(self._value)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_child</span><span class="params">(self,node)</span>:</span></span><br><span class="line">        self.children.append(node)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> iter(self._children)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    root=Node(<span class="number">0</span>)</span><br><span class="line">    child1=Node(<span class="number">1</span>)</span><br><span class="line">    child2=Node(<span class="number">2</span>)</span><br><span class="line">    root.add_child(child1)</span><br><span class="line">    root.add_child(child2)</span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> root:</span><br><span class="line">        print(ch)</span><br><span class="line">    <span class="comment">#outputs Node(1),Node(2)</span></span><br></pre></td></tr></table></figure>
+<h5 id="discussion-1"><a href="#discussion-1" class="headerlink" title="discussion"></a>discussion</h5><p>python的迭代器协议要求被迭代对象必须要有<code>__iter__</code>方法，并且该方法必须返回一个拥有next方法以定义iteration具体行为的结构。<br>就如len(s)实际调用了<code>s.__len__</code>，iter(s)实际调用的是<code>s.__iter__()</code>。</p>
+<h4 id="4-3-Creating-New-Iteration-Patterns-With-Generators"><a href="#4-3-Creating-New-Iteration-Patterns-With-Generators" class="headerlink" title="4.3 Creating New Iteration Patterns With Generators"></a>4.3 Creating New Iteration Patterns With Generators</h4><h5 id="problem-2"><a href="#problem-2" class="headerlink" title="problem"></a>problem</h5><p>你想要实现一种与内置方式不同的迭代模式。</p>
+<h5 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h5><p>Generator提供了完美的解决方案！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">frange</span><span class="params">(start,stop,increment)</span>:</span></span><br><span class="line">    x=start</span><br><span class="line">    <span class="keyword">while</span>(x&lt;stop):</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">        x+=increment</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> frange(<span class="number">1</span>,<span class="number">6</span>,<span class="number">2</span>):</span><br><span class="line">    print(x)</span><br><span class="line"><span class="comment">#1,3,5</span></span><br><span class="line">list(frange(<span class="number">1</span>,<span class="number">6</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment">#[1,3,5]</span></span><br></pre></td></tr></table></figure>
+<h5 id="discussion-2"><a href="#discussion-2" class="headerlink" title="discussion"></a>discussion</h5><p>我们定义一个generator函数，关键字为yield，只要出现了这样的关键字，那么表示，这个函数的返回值会拥有next方法，即可移植性迭代操作。</p>
+<h4 id="4-4-Implementing-the-Iterator-Protocal"><a href="#4-4-Implementing-the-Iterator-Protocal" class="headerlink" title="4.4 Implementing the Iterator Protocal"></a>4.4 Implementing the Iterator Protocal</h4><h5 id="problem-3"><a href="#problem-3" class="headerlink" title="problem"></a>problem</h5><p>在自定义容器中，想要对深层次的可迭代对象进行迭代操作，比如对外层对象进行迭代的结果仍然是iterable的，就再次进行迭代。</p>
+<h5 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h5><p>yield from 方法可以实现这类要求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在4.2中，内置的__iter__返回了序列的外层迭代接口，但我们想要一个接口可已进行深层的迭代</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,value)</span>:</span></span><br><span class="line">        self._value=value</span><br><span class="line">        self._children=[]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Node(&#123;&#125;)'</span>.format(self._value)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_child</span><span class="params">(self,node)</span>:</span></span><br><span class="line">        self._children.append(node)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> iter(self._children)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">depth_iter</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">yield</span> self</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> self:</span><br><span class="line">            <span class="keyword">yield</span> <span class="keyword">from</span> s.depth_iter()</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    root=Node(<span class="number">0</span>)</span><br><span class="line">    child1=Node(<span class="number">1</span>)</span><br><span class="line">    child2=Node(<span class="number">2</span>)</span><br><span class="line">    root.add_child(Node1)</span><br><span class="line">    root.add_child(Node2)</span><br><span class="line">    child3=Node(<span class="number">3</span>)</span><br><span class="line">    child4=Node(<span class="number">4</span>)</span><br><span class="line">    child1.add_child(child3)</span><br><span class="line">    child2.add_child(child4)</span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> root.depth_iter():</span><br><span class="line">        print(ch)</span><br><span class="line"><span class="comment">#Node(1),Node(3),Node(2),Node(4)</span></span><br></pre></td></tr></table></figure>
+<h5 id="discussion-3"><a href="#discussion-3" class="headerlink" title="discussion"></a>discussion</h5><p>yield from 是python3的语法，<code>yield from gen()</code>，其中gen()必须返回一个generator对象，此时会执行返回对象的next方法并将结果传递给外层的yield。</p>
+<h4 id="4-5-Iterating-In-Reverse"><a href="#4-5-Iterating-In-Reverse" class="headerlink" title="4.5 Iterating In Reverse"></a>4.5 Iterating In Reverse</h4><h5 id="problem-4"><a href="#problem-4" class="headerlink" title="problem"></a>problem</h5><p>你想要对某个序列进行反向迭代</p>
+<h5 id="solution-4"><a href="#solution-4" class="headerlink" title="solution"></a>solution</h5><p>使用内置的<code>reversed</code>方法可以解决此类问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> reversed(a):</span><br><span class="line">    print(x)</span><br><span class="line"><span class="comment">#54321</span></span><br></pre></td></tr></table></figure>
+<h5 id="discussion-4"><a href="#discussion-4" class="headerlink" title="discussion"></a>discussion</h5><p>使用reversed的方法必须要满足两个条件中的一个，其一是传入的参数对象必须要有明确的大小，也就是能够确定iterate的次<br>数，然后就是对象具有<code>__reversed__</code>方法，如果这两个条件都不满足，那么你需要先将该对象转化为list在进行reversed。<br>但是，将iterator对象转化为reversed会消耗额外的内存，因此不提倡这样做，可以在对象中定义<code>__reversed__</code>方法来自定义反向迭代的逻辑。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/20/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F/" rel="next" title="JavaScript设计模式--职责链模式">
+                <i class="fa fa-chevron-left"></i> JavaScript设计模式--职责链模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/23/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/lesson16-20/" rel="prev" title="python.cookbook读书笔记四">
+                python.cookbook读书笔记四 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter4-iterators-and-generators"><span class="nav-number">1.</span> <span class="nav-text">chapter4 iterators and generators</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-manually-consuming-a-iterator"><span class="nav-number">1.1.</span> <span class="nav-text">4.1 manually consuming a iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#problem"><span class="nav-number">1.1.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#solution"><span class="nav-number">1.1.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion"><span class="nav-number">1.1.3.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-delegeting-iteration"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 delegeting iteration</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#problem-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#solution-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-Creating-New-Iteration-Patterns-With-Generators"><span class="nav-number">1.3.</span> <span class="nav-text">4.3 Creating New Iteration Patterns With Generators</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#problem-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#solution-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-Implementing-the-Iterator-Protocal"><span class="nav-number">1.4.</span> <span class="nav-text">4.4 Implementing the Iterator Protocal</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#problem-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#solution-3"><span class="nav-number">1.4.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion-3"><span class="nav-number">1.4.3.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-Iterating-In-Reverse"><span class="nav-number">1.5.</span> <span class="nav-text">4.5 Iterating In Reverse</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#problem-4"><span class="nav-number">1.5.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#solution-4"><span class="nav-number">1.5.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#discussion-4"><span class="nav-number">1.5.3.</span> <span class="nav-text">discussion</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>python.cookbook读书笔记一 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/pycookbook1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">python.cookbook读书笔记一</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T00:00:00+08:00">2017-09-27</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="chapter1-数据结构和算法"><a href="#chapter1-数据结构和算法" class="headerlink" title="chapter1 数据结构和算法"></a>chapter1 数据结构和算法</h2><p>python内置了许多有用的数据结构，比如list,set,dictionarie，大部分时候我们只是直接的使用这些结构，但是，当面对类似搜索、排序、筛选、赋值等操作时，会遇到仅仅依靠数据结构无法解决的问题，本章的目的正是讨论这些公有数据结构以及相关的算法知识。</p>
+<a id="more"></a>
+
+<h3 id="1-1解构赋值"><a href="#1-1解构赋值" class="headerlink" title="1.1解构赋值"></a>1.1解构赋值</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>当你想要将含有N个数值的序列同时复制给M个变量时，可以使用简单的赋值语句来完成，仅需要满足的条件是N==M</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p=(<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">11</span>)</span><br><span class="line">x,y,z,a=p</span><br><span class="line">//等价于x=<span class="number">3</span>,y=<span class="number">6</span>,z=<span class="number">9</span>,a=<span class="number">11</span></span><br><span class="line"></span><br><span class="line">data=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="number">3</span>]</span><br><span class="line">a,b,c,d=data</span><br><span class="line">//等价于a=<span class="string">'a'</span>,b=<span class="string">'b'</span>,c=<span class="string">'c'</span>,d=<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>如果N!=M，则会抛出错误</p>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><p>解构赋值可以使用在任何iterable的数据类型，包括元组、序列、字符串、文件列、迭代器等如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'hello'</span></span><br><span class="line">a,b,c,d,e=s</span><br><span class="line">//相当于a=<span class="string">'h'</span>,b=<span class="string">'e'</span>,c=<span class="string">'l'</span>,d=<span class="string">'l'</span>,e=<span class="string">'o'</span></span><br></pre></td></tr></table></figure>
+<p>当你想要忽略iterable中的某些选项的时候，在赋值时在相应位置使用占位符<code>_</code>代替即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>]</span><br><span class="line">_,a,_,b=data</span><br><span class="line">//相当于a=<span class="string">'b'</span>,b=<span class="string">'d'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2任意长度对象的解构赋值"><a href="#1-2任意长度对象的解构赋值" class="headerlink" title="1.2任意长度对象的解构赋值"></a>1.2任意长度对象的解构赋值</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><p>在1.1中，若<code>N&gt;M</code>，会抛出<code>too many values to unpack</code>的错误</p>
+<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>使用星号表达式可以解决这类问题  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drop_first_last</span><span class="params">(grades)</span>:</span></span><br><span class="line">    first,*middle,last = grades</span><br><span class="line">    <span class="keyword">return</span> avg(middle)</span><br><span class="line"><span class="comment">#将返回grades除去了头和尾后剩下的部分</span></span><br><span class="line"></span><br><span class="line">record = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>]</span><br><span class="line">a,*b,c,d,e = record</span><br><span class="line"><span class="comment">#相当于a='a',b=['b','c'],c='d',d='e',e='f'</span></span><br></pre></td></tr></table></figure>
+<p>使用星号表达式作为前缀的变量会获得将‘剩余的所有待分配值’，当然会按照相对位置优先分配给没有使用星号的变量。</p>
+<h4 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h4><p>扩展后的解构赋值通常是未某些情况量身定制的，比如我们想要从某个数据集合中取出特定位置的部分，例如某个序列中除了某些特殊位置外全都是数字之类的情况。星号表达式特别适用于处理包含元组的序列，也适合于处理包含特定分隔符的字符串序列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">records=[(<span class="string">'a'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),(<span class="string">'b'</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>),(<span class="string">'c'</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)]</span><br><span class="line"><span class="keyword">for</span> tag,*args <span class="keyword">in</span> records:</span><br><span class="line">    print(tag,args)</span><br><span class="line"><span class="comment">#'a',1,2,3</span></span><br><span class="line"><span class="comment">#'b',2,3,4</span></span><br><span class="line"><span class="comment">#'c',3,4,5</span></span><br><span class="line"></span><br><span class="line">line=<span class="string">'abcd/efgh/ijkl/mnop/qrst'</span></span><br><span class="line">a,b,*c,d=line.split(<span class="string">'/'</span>)</span><br><span class="line"><span class="comment">#a='abcd'</span></span><br><span class="line"><span class="comment">#b='efgh'</span></span><br><span class="line"><span class="comment">#c='ijkl/mnop'</span></span><br><span class="line"><span class="comment">#d='qrst'</span></span><br></pre></td></tr></table></figure>
+<p>有时你想要在选择出有用的部分同时去除不需要的部分，同样可以使用<code>_</code>来代替相关的位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis=[<span class="string">'a'</span>,<span class="string">'b'</span>,(<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>)]</span><br><span class="line">a,*_,(*_,c)=lis</span><br><span class="line"><span class="comment">#a='a'</span></span><br><span class="line"><span class="comment">#c='e'</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3保留最后几个值"><a href="#1-3保留最后几个值" class="headerlink" title="1.3保留最后几个值"></a>1.3保留最后几个值</h3><h4 id="problem"><a href="#problem" class="headerlink" title="problem"></a>problem</h4><p>有时你想要在某些过程中保留数据中的最后几个值</p>
+<h4 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h4><p>保留有限个数的历史记录非常适合使用<code>deeque</code>这种数据结构，例如以下就是一个简单的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#引入deque</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(lines,pattern,history=<span class="number">5</span>)</span>:</span></span><br><span class="line">    previous_lines=deque(maxlen=history)</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">            <span class="keyword">if</span> pattern <span class="keyword">in</span> line:</span><br><span class="line">                <span class="keyword">yield</span> line,previous_lines</span><br><span class="line">            previous_lines.append(line)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'./test.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> line,prevlines <span class="keyword">in</span> search(f,<span class="string">'asdf'</span>,<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> pline <span class="keyword">in</span> prevlines:</span><br><span class="line">                print(pline,end=<span class="string">''</span>)</span><br><span class="line">                print(line,end=<span class="string">''</span>)</span><br><span class="line">                print(<span class="string">'-'</span>*<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="讨论-2"><a href="#讨论-2" class="headerlink" title="讨论"></a>讨论</h4><p>上述代码将文件内容进行分析，取出与搜索目标即pattern相关的行以及相关行的前几行（history），使用了yield关键字。这里控制输出行数的方法是定义一个限定长度的deque，在每一次想deque中添加数据时，会将超出限度的数据清除。<br>deque的常用方法有：</p>
+<ul>
+<li>append 向末尾追加数据</li>
+<li>appendleft 向左侧添加数据</li>
+<li>pop 清除末尾元素</li>
+<li>popleft 清除开头元素</li>
+<li>extend 向末尾添加集合元素（即向数组中添加整个数组的值）</li>
+<li>extendleft 顾名思义</li>
+</ul>
+<h3 id="1-4寻找多个最值"><a href="#1-4寻找多个最值" class="headerlink" title="1.4寻找多个最值"></a>1.4寻找多个最值</h3><h4 id="problem-1"><a href="#problem-1" class="headerlink" title="problem"></a>problem</h4><p>请给我找出由某个数据集合中最大或者最小值组成的list</p>
+<h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><p>这种情况下使用heapq最为合适，这种内置的数据结构天生具有类似的能力</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums=[<span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">7</span>, <span class="number">-4</span>, <span class="number">18</span>, <span class="number">23</span>, <span class="number">42</span>, <span class="number">37</span>, <span class="number">2</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>,nums)) <span class="comment">#prints [42,37,23]</span></span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>,nums)) <span class="comment">#prints [-4,1,2]</span></span><br><span class="line"><span class="comment">#heapq也可以处理较为复杂的结构化数据</span></span><br><span class="line">portfolio = [</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'IBM'</span>, <span class="string">'shares'</span>: <span class="number">100</span>, <span class="string">'price'</span>: <span class="number">91.1</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'AAPL'</span>, <span class="string">'shares'</span>: <span class="number">50</span>, <span class="string">'price'</span>: <span class="number">543.22</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'FB'</span>, <span class="string">'shares'</span>: <span class="number">200</span>, <span class="string">'price'</span>: <span class="number">21.09</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'HPQ'</span>, <span class="string">'shares'</span>: <span class="number">35</span>, <span class="string">'price'</span>: <span class="number">31.75</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'YHOO'</span>, <span class="string">'shares'</span>: <span class="number">45</span>, <span class="string">'price'</span>: <span class="number">16.35</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'ACME'</span>, <span class="string">'shares'</span>: <span class="number">75</span>, <span class="string">'price'</span>: <span class="number">115.65</span>&#125;</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</span><br><span class="line">expensive = heapq.nlargest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h4><p>heapq又称为堆，是一种python模块，这种结构的骨架为一颗二叉树，其中每个父节点的值都小于或者等于其任意一个子节点，因此整个堆的最小值一定是在顶点。从数据类型角度讲，heapq是一类数组，这类数组中一定存在着这种关系，即：<code>for k in list(heap.length):heap[k] &lt;= heap[2*k+1]&amp;&amp;heap[k]&lt;=heap[2*k+2]</code><br>heapq的常用操作有：</p>
+<ul>
+<li><p>heapq.heappush(heap,item) 将item添加至heap中</p>
+</li>
+<li><p>heapq.heappop(heap) 将堆顶的值弹出，即弹出并返回heap中的最小值</p>
+</li>
+<li><p>heapq.heappushpop(heap,item) 将item添加至heap中，然后立刻将heap最小的值弹出并返回，效率比两个操作分开执行要高</p>
+</li>
+<li><p>heapq.heapify(x) transform x into a heap,in-place,in linear time</p>
+</li>
+<li><p>heapq.heapreplace(heap,item) 先返回现有heap的最小值，再将item添加进heap中</p>
+</li>
+<li><p>heapq.merge(*iterables,key=None,reverse=False)将多个排好序的输入merge为一个排好序的输出，返回的是iterable数据结构，每次按顺序输出尚未输出过的数据中的最小值</p>
+</li>
+<li><p>heap.nsmallest(n,iterable,key=None) 返回由iterable定义的数据中最小的n个数，若提供了key，则会以key作为取值索引进行比较</p>
+</li>
+<li><p>heapq.nlargest(n,iterable,key=none) 顾名思义</p>
+</li>
+</ul>
+<p>使用heapq的场景多见于从不太大型的集合中取得多个特定数据，当只需要一个最值或者集合规模比较庞大时，更快的方法是采用min()或者max(),如果想要获取的最值个数与集合本身元素数量在一个数量级，更快的方式则是使用sort后再slice。如sorted(items)[:N]</p>
+<h3 id="1-5-完成有序优先级的序列"><a href="#1-5-完成有序优先级的序列" class="headerlink" title="1.5 完成有序优先级的序列"></a>1.5 完成有序优先级的序列</h3><h4 id="problem-2"><a href="#problem-2" class="headerlink" title="problem"></a>problem</h4><p>你想要按自定义的优先级填充某个序列，并总是返回序列最优先的拿一个值</p>
+<h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><p>同上，这类问题也可以使用heapq来解决，在填充的时候利用heapq的比对特点来进行优先级的设置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PriorityQueue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._queue=[]</span><br><span class="line">        self._index=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self,item,priority)</span>:</span></span><br><span class="line">        heapq.heappush(self._queue,(-priority,self._index,item))</span><br><span class="line">        self._index += <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        heapq.heappop(self._queue)[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>注意，我们可以明确一点即在python中存在<code>if a&gt;b : (a,any,any)&gt;(b,any,any)</code>成立，因此我们可以将优先级作为item的第一个数值以便于heapq进行排序。<br>下面看看如何使用上面的代码来解决本节的问题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self._name = name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Item(&#123;!r&#125;)'</span>.format(self._name)</span><br><span class="line"></span><br><span class="line">q=PriorityQueue()</span><br><span class="line">q.push(Item(<span class="string">'foo'</span>),<span class="number">1</span>)</span><br><span class="line">q.push(Item(<span class="string">'bar'</span>),<span class="number">2</span>)</span><br><span class="line">q.push(Item(<span class="string">'span'</span>),<span class="number">3</span>)</span><br><span class="line">q.pop()<span class="comment">#Item('span')</span></span><br><span class="line">q.pop()<span class="comment">#Item('bar')</span></span><br></pre></td></tr></table></figure>
+<h4 id="discussion-1"><a href="#discussion-1" class="headerlink" title="discussion"></a>discussion</h4><p>heapq默认的pop方法会返回最小的元素，而我们将之以负数代替即可达到范围我们认为的最大的元素。在我们定义元素时，还用到了自增序列索引值·<code>index</code>，它的作用是在我们连续传入两个相同优先级的元素时按照索引来进行排序，否则会抛出<code>无法排序</code>错误。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/11/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3/redux/redux%E8%A7%A3%E6%9E%90/" rel="next" title="redux解析">
+                <i class="fa fa-chevron-left"></i> redux解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/03/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/python/cookbook/lesson6-10/" rel="prev" title="python.cookbook读书笔记二">
+                python.cookbook读书笔记二 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter1-数据结构和算法"><span class="nav-number">1.</span> <span class="nav-text">chapter1 数据结构和算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1解构赋值"><span class="nav-number">1.1.</span> <span class="nav-text">1.1解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.1.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论"><span class="nav-number">1.1.2.</span> <span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2任意长度对象的解构赋值"><span class="nav-number">1.2.</span> <span class="nav-text">1.2任意长度对象的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方法"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3保留最后几个值"><span class="nav-number">1.3.</span> <span class="nav-text">1.3保留最后几个值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#problem"><span class="nav-number">1.3.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#solution"><span class="nav-number">1.3.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4寻找多个最值"><span class="nav-number">1.4.</span> <span class="nav-text">1.4寻找多个最值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#problem-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#discussion"><span class="nav-number">1.4.3.</span> <span class="nav-text">discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-完成有序优先级的序列"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 完成有序优先级的序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#problem-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#discussion-1"><span class="nav-number">1.5.3.</span> <span class="nav-text">discussion</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

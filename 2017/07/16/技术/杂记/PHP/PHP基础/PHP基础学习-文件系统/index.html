@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的喜欢">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/index.html">
+<meta property="og:site_name" content="TheBlog">
+<meta property="og:description" content="我的喜欢隆冬风雪酷夏烈日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-06T22:30:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:59:02.896Z">
+<meta property="article:author" content="山羁">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/随笔/行为/我的喜欢/"/>
+
+
+
+
+
+  <title>PHP基础学习--文件系统 | TheBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TheBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">PHP基础学习--文件系统</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-16T00:00:00+08:00">2017-07-16</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>PHP拥有丰富的文件操作函数如file_get_contents,file_exists,file_put_contents等。</p>
+<a id="more"></a>
+<h4 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h4><p>最简单的读取方法是<code>file_get_contents</code></p>
+<pre><code>syntax:file_get_contents(path,include_path,context,start,max_length)</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  $content=file_get_contents(<span class="string">'./test.txt'</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以使用<code>fopen,fgets,fread</code>等方法。<br>fgets可以从文件指针中读取一行，freads可以读取指定长的的内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$fp = fopen(<span class="string">'./text.txt'</span>, <span class="string">'rb'</span>);</span><br><span class="line"><span class="keyword">while</span>(!feof($fp)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> fgets($fp); <span class="comment">//读取一行</span></span><br><span class="line">&#125;</span><br><span class="line">fclose($fp);</span><br><span class="line"><span class="comment">//or use freads</span></span><br><span class="line">$fp = fopen(<span class="string">'./text.txt'</span>, <span class="string">'rb'</span>);</span><br><span class="line">$contents = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">while</span>(!feof($fp)) &#123;</span><br><span class="line">    $contents .= fread($fp, <span class="number">4096</span>); <span class="comment">//一次读取4096个字符</span></span><br><span class="line">&#125;</span><br><span class="line">fclose($fp);</span><br></pre></td></tr></table></figure>
+<p>使用fopen打开的文件，最好使用fclose关闭文件指针，以避免文件句柄被占用。</p>
+<h4 id="写入一个文件"><a href="#写入一个文件" class="headerlink" title="写入一个文件"></a>写入一个文件</h4><p>对某个文件进行写操作可以使用<code>file_put_contents</code>或者fwrite的方式</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$filename = <span class="string">'./test.txt'</span>;</span><br><span class="line">$data = <span class="string">'test'</span>;</span><br><span class="line">file_put_contents($filename, $data);</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line">$fp = fopen(<span class="string">'./test.txt'</span>, <span class="string">'w'</span>);</span><br><span class="line">fwrite($fp, <span class="string">'hello'</span>);</span><br><span class="line">fwrite($fp, <span class="string">'world'</span>);</span><br><span class="line">fclose($fp);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="文件系统函数"><a href="#文件系统函数" class="headerlink" title="文件系统函数"></a>文件系统函数</h4><ul>
+<li>basename — Returns trailing name component of path</li>
+<li>chgrp — Changes file group</li>
+<li>chmod — Changes file mode</li>
+<li>chown — Changes file owner</li>
+<li>clearstatcache — Clears file status cache</li>
+<li>copy — Copies file</li>
+<li>delete — See unlink or unset</li>
+<li>dirname — Returns a parent directory’s path</li>
+<li>disk_free_space — Returns available space on filesystem or disk partition</li>
+<li>disk_total_space — Returns the total size of a filesystem or disk partition</li>
+<li>diskfreespace — Alias of disk_free_space</li>
+<li>fclose — Closes an open file pointer</li>
+<li>feof — Tests for end-of-file on a file pointer</li>
+<li>fflush — Flushes the output to a file</li>
+<li>fgetc — Gets character from file pointer</li>
+<li>fgetcsv — Gets line from file pointer and parse for CSV fields</li>
+<li>fgets — Gets line from file pointer</li>
+<li>fgetss — Gets line from file pointer and strip HTML tags</li>
+<li>file_exists — Checks whether a file or directory exists</li>
+<li>file_get_contents — Reads entire file into a string</li>
+<li>file_put_contents — Write a string to a file</li>
+<li>file — Reads entire file into an array</li>
+<li>fileatime — Gets last access time of file</li>
+<li>filectime — Gets inode change time of file</li>
+<li>filegroup — Gets file group</li>
+<li>filemtime — Gets file modification time</li>
+<li>fileowner — Gets file owner</li>
+<li>fileperms — Gets file permissions</li>
+<li>filesize — Gets file size</li>
+<li>filetype — Gets file type</li>
+<li>fnmatch — Match filename against a pattern</li>
+<li>fopen — Opens file or URL</li>
+<li>nfpassthru — Output all remaining data on a file pointer</li>
+<li>fputcsv — Format line as CSV and write to file pointer</li>
+<li>fputs — Alias of fwrite</li>
+<li>fread — Binary-safe file read</li>
+<li>fscanf — Parses input from a file according to a format</li>
+<li>fseek — Seeks on a file pointer</li>
+<li>fstat — Gets information about a file using an open file pointer</li>
+<li>ftell — Returns the current position of the file read/write pointer</li>
+<li>ftruncate — Truncates a file to a given length</li>
+<li>fwrite — Binary-safe file write</li>
+<li>glob — Find pathnames matching a pattern</li>
+<li>is_dir — Tells whether the filename is a directory</li>
+<li>is_executable — Tells whether the filename is executable</li>
+<li>is_file — Tells whether the filename is a regular file</li>
+<li>is_link — Tells whether the filename is a symbolic link</li>
+<li>is_readable — Tells whether a file exists and is readable</li>
+<li>is_uploaded_file — Tells whether the file was uploaded via HTTP POST</li>
+<li>is_writable — Tells whether the filename is writable</li>
+<li>is_writeable — Alias of is_writable</li>
+<li>lchgrp — Changes group ownership of symlink</li>
+<li>lchown — Changes user ownership of symlink</li>
+<li>link — Create a hard link</li>
+<li>linkinfo — Gets information about a link</li>
+<li>lstat — Gives information about a file or symbolic link</li>
+<li>mkdir — Makes directory</li>
+<li>move_uploaded_file — Moves an uploaded file to a new location</li>
+<li>parse_ini_file — Parse a configuration file</li>
+<li>parse_ini_string — Parse a configuration string</li>
+<li>pathinfo — Returns information about a file path</li>
+<li>pclose — Closes process file pointer</li>
+<li>popen — Opens process file pointer</li>
+<li>readfile — Outputs a file</li>
+<li>readlink — Returns the target of a symbolic link</li>
+<li>realpath_cache_get — Get realpath cache entries</li>
+<li>realpath_cache_size — Get realpath cache size</li>
+<li>realpath — Returns canonicalized absolute pathname</li>
+<li>rename — Renames a file or directory</li>
+<li>rewind — Rewind the position of a file pointer</li>
+<li>rmdir — Removes directory</li>
+<li>set_file_buffer — Alias of stream_set_write_buffer</li>
+<li>stat — Gives information about a file</li>
+<li>symlink — Creates a symbolic link</li>
+<li>tempnam — Create file with unique file name</li>
+<li>tmpfile — Creates a temporary file</li>
+<li>touch — Sets access and modification time of file</li>
+<li>umask — Changes the current umask</li>
+<li>unlink — Deletes a file</li>
+</ul>
+<p>虽然与这么多函数，不得不承认看起来很崩溃，不过我们只要熟悉这些函数有哪些功能以及特性，能够在合适的情境下通过手册进行使用就足够啦。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"># 基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/15/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0--session%E4%B8%8Ecookie/" rel="next" title="PHP基础学习--session与cookie">
+                <i class="fa fa-chevron-left"></i> PHP基础学习--session与cookie
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/20/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS/svg/svg-circle/" rel="prev" title="svg-circle&&ellipse">
+                svg-circle&&ellipse <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山羁</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取文件内容"><span class="nav-number">1.</span> <span class="nav-text">读取文件内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入一个文件"><span class="nav-number">2.</span> <span class="nav-text">写入一个文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件系统函数"><span class="nav-number">3.</span> <span class="nav-text">文件系统函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山羁</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
