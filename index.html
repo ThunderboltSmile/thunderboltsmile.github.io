@@ -282,6 +282,233 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%8A%80%E6%9C%AF/NODEJS/nodejs%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/08/%E6%8A%80%E6%9C%AF/NODEJS/nodejs%E6%A8%A1%E5%9D%97/" itemprop="url">nodejs模块机制</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T22:37:25+08:00">2020-04-08</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="CommonJs规范"><a href="#CommonJs规范" class="headerlink" title="CommonJs规范"></a>CommonJs规范</h4><p>为了使nodejs具备开发大型应用的基础能力，CommonJS规范应运而生，其涵盖了模块、二进制、Buffer、<br>字符集编码、I/O流、进程环境、文件系统、套接字、单元测试、Web服务器网关接口、包管理等。</p>
+<h4 id="模块规范"><a href="#模块规范" class="headerlink" title="模块规范"></a>模块规范</h4><ol>
+<li>模块引用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</span><br></pre></td></tr></table></figure></li>
+<li>模块定义</li>
+</ol>
+<ul>
+<li>require方法用于引入模块</li>
+<li>exports对象用于导出当前模块的方法或者变量</li>
+<li>module对象代表模块自身</li>
+<li>exports是module的属性</li>
+<li>一个文件就是一个模块</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// math.js</span></span><br><span class="line">exports.add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>,i=<span class="number">0</span>,args = <span class="built_in">arguments</span>,l = args.length;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;l)&#123;</span><br><span class="line">        sum += args[i++]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// program.js</span></span><br><span class="line"><span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>)</span><br><span class="line">exports.increment = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> math.add(val,<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>模块标示<br>｜模块 = require(‘模块标示’)<br>每个模块具有独立的空间，他们互不干扰，使得用户完全不必考虑变量污染</li>
+</ol>
+<h4 id="模块实现"><a href="#模块实现" class="headerlink" title="模块实现"></a>模块实现</h4><p>在node中引入模块，需要经历如下3个步骤</p>
+<ul>
+<li>路径分析</li>
+<li>文件定位</li>
+<li>编译执行<br>node中的模块分为核心模块和文件模块，核心模块加载速度最快，文件模块为用户自己编写的模块，需要完整的<br>路径分析、文件定位、编译执行过程，速度比核心模块慢。</li>
+</ul>
+<p>a. 优先从缓存加载<br>Nodejs为了提高性能，会对加载的模块进行缓存<br>b. 路径分析和文件定位<br>从加载优先级来讲 缓存&gt;核心模块&gt;路径&gt;自定义模块</p>
+<ul>
+<li>文件扩展名分析：有时模块标示没有包含扩展名，node会按照 .js,.json,.node的次序补足扩展名，依次尝试。<br>c. 模块编译<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件模块的定义</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Module</span>(<span class="params">id, parent</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">this</span>.id = id; </span><br><span class="line">    <span class="keyword">this</span>.exports = &#123;&#125;; </span><br><span class="line">    <span class="keyword">this</span>.parent = parent; </span><br><span class="line">    <span class="keyword">if</span> (parent &amp;&amp; parent.children) &#123; </span><br><span class="line">        parent.children.push(<span class="keyword">this</span>); </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">this</span>.filename = <span class="literal">null</span>; </span><br><span class="line">    <span class="keyword">this</span>.loaded = <span class="literal">false</span>; </span><br><span class="line">    <span class="keyword">this</span>.children = []; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>定位到具体文件后，Node会新建一个模块对象，然后根据路径载入并编译。对于不同的文件扩展名，载入方法有所<br>不同</p>
+<ul>
+<li>.js文件 通过fs模块同步读取文件后编译执行</li>
+<li>.node文件 这是C/C++编写的扩展文件，通过dlopen()方法加载最后编译生成的文件</li>
+<li>.json文件 通过fs模块同步读取文件后，用JSON.parse解析返回结果</li>
+<li>其余扩展名 都被当作.js文件载入<br>可以通过<code>require.extensions[&#39;.xxx&#39;]</code>的方式来实现加载自定义扩展名文件的能力。但这样会将繁琐的编译加载等过程引入Node的执行过程中<br>在编译的过程中，Node对获取的javascript文件内容进行了头尾包装。在头部添加了<code>(function(exports,require,module,__filename,__dirname){</code>，在尾部添加了<code>});</code>。这样每个模块文件之间都进行了作用域隔离。包装之后的代码会通过vm原生模块的<code>runInThisContext()</code>方法执行，返回一个具体的function对象。</li>
+</ul>
+<h4 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h4><p>核心分为C/C++编写部分（node项目的src目录下）和javascript编写部分（存放在项目的lib目录下）。</p>
+<ol>
+<li>javascript核心模块的编译过程<br>a. 在编译所有C/C++文件之前，编译程序需要将所有的javascript模块文件编译为C/C++代码。</li>
+</ol>
+<ul>
+<li>将javascript代码转换为C++里的数组，生成node_natives.h头文件</li>
+<li>启动node时，直接加载进内存中，经历标识符分析后直接定位到内存中。<br>b. 编译成功的模块缓存到NativeModule._cache对象上，文件模块则缓存到Module._cache对象上<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NativeModule</span>(<span class="params">id</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">this</span>.filename = id + <span class="string">'.js'</span>; </span><br><span class="line">    <span class="keyword">this</span>.id = id; </span><br><span class="line">    <span class="keyword">this</span>.exports = &#123;&#125;; </span><br><span class="line">    <span class="keyword">this</span>.loaded = <span class="literal">false</span>; </span><br><span class="line">&#125; </span><br><span class="line">NativeModule._source = process.binding(<span class="string">'natives'</span>); </span><br><span class="line">NativeModule._cache = &#123;&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>C/C++核心模块的编译过程<br>a. 内建模块的组织形式<br>在Node中，内建模块的内部结构定义如下：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node_module_struct</span> &#123;</span> </span><br><span class="line">    <span class="keyword">int</span> version; </span><br><span class="line">    <span class="keyword">void</span> *dso_handle; </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *filename; </span><br><span class="line">    <span class="keyword">void</span> (*register_func) (v8::Handle&lt;v8::Object&gt; target); </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *modname; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+每一个内建模块在定义之后，都通过NODE_MODULE宏将模块定义到node命名空间中，模块的具体初始化方法挂载为结构的register_func成员。<br>内建模块在执行时，直接加载进内存，无需标识符定位、文件定位以及编译过程。<br>b. 内建模块的导出<br>从模块层级间依赖的角度看：文件模块-依赖-&gt;核心模块(javascript)-依赖-&gt;内建模块(C++)</li>
+<li>核心模块的引入流程</li>
+</ol>
+<p><code>NODE_MODULE(node_os,reg_func)-&gt;get_builtin_module(&quot;node_os&quot;)-&gt;process.binding(&quot;os&quot;)-&gt;NativeModule.require(&quot;os&quot;)-&gt;require(&quot;os&quot;)</code></p>
+<ol start="4">
+<li>模块调用栈<br>nodejs核心模块的职责主要有两类：为底层模块提供封装和桥接层，供文件模块调用；纯粹功能模块，不需要跟底层交互，但十分重要。</li>
+</ol>
+<h4 id="包与NPM"><a href="#包与NPM" class="headerlink" title="包与NPM"></a>包与NPM</h4><p>一个包应该包含如下目录和文件：</p>
+<ul>
+<li>package.json 描述文件</li>
+<li>bin 存放可执行二进制文件</li>
+<li>lib 存放javascript代码</li>
+<li>doc 存放文档</li>
+<li>test 存放单元测试用例</li>
+</ul>
+<h5 id="如何发布一个包"><a href="#如何发布一个包" class="headerlink" title="如何发布一个包"></a>如何发布一个包</h5><ol>
+<li>编写模块</li>
+<li>初始化包描述文件（建议npm init命令来生成）</li>
+<li>注册包仓库帐号（npm adduser）</li>
+<li>上传包（npm publish <folder>）</li>
+<li>安装包 </li>
+<li>管理包权限（npm owner）</li>
+<li>分析包（npm ls）</li>
+</ol>
+<h4 id="AMD、CMD规范"><a href="#AMD、CMD规范" class="headerlink" title="AMD、CMD规范"></a>AMD、CMD规范</h4><p>AMD模块需要用define来明确定义一个模块，而在Node实现中是隐式包装的，他们的目的是进行作用域隔离，仅在需要的时候被引入，避免通过全局变量或者全局命名空间的方式，以免变量污染和不小心被修改。AMD规范的内容需要通过返回的方式来实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">'dep1'</span>,<span class="string">'dep2'</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> <span class="keyword">var</span> exports = &#123;&#125;; </span><br><span class="line"> exports.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">'Hello from module: '</span> + <span class="built_in">module</span>.id); </span><br><span class="line"> &#125;; </span><br><span class="line"> <span class="keyword">return</span> exports; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>AMD需要在定义模块时指定所有的依赖，通过形参传递依赖到模块内容中，而CMD支持对依赖的动态引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123; </span><br><span class="line"> <span class="comment">// The module code goes here </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/%E9%9A%8F%E7%AC%94/%E8%A1%8C%E4%B8%BA/%E6%88%91%E7%9A%84%E5%96%9C%E6%AC%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1565,162 +1792,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="山羁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TheBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/20/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F/" itemprop="url">JavaScript设计模式--职责链模式</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T00:00:00+08:00">2017-10-20</time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在组合模式中，事件或者对象经过父节点组件处理后，会向下传递给子节点，但是我们常常遇到这样的问题，我们接收到一个事件对象，但由于该对象的变化情况非常多样，如果每次都根据不同的情况做出不同处理，会造成代码上的严重耦合，此时，我们不如让函数自己去判断是否对该对象进行处理，也就是针对某个可变的一系列相似事件，构造一条职责链，职责链的每一节点负责不同的处理方式，甚至职责链的每个节点仍旧是一条职责链，这样就将时间发起者与事件处理者之间的耦合关系大大减弱。</p>
-<p>在看到职责链模式的描述的时候，我首先想到的是redux中的reducer，reducer是一种简单的职责链的实现方式，但在构建react应用中发挥了巨大的作用，在每一个reducer中，都负责了不同数据的处理方式，reducer实现事件对象传递是非常粗暴的，即穷举法，对职责链中的每一个节点传入相同的参数然后返回得到的结果集，但得益于switch的高效，这种做法并不会对性能产生太大的影响。</p>
-<p>redux中的中间件机制，也可以使用职责链来描述，但中间件之间传递事件对象时，则需要每个中间件将对象返回出去，这就对编写中间件的方式做了默认的约定，即返回结果的形式需要能够被下一级中间件使用。</p>
-<p>著名的jQuery以链式调用为一大特色，其中也可以使用职责链模式来解释，只是此时的职责链传递的是事件发起者本身。</p>
-<p>在组合模式中运用职责链时，可以将组合后的对象通过职责链连接起来，以优化事件对象的传递方向或者数据的流动方向。</p>
-<p>脱离redux来讲，职责链模式的应用范围非常广泛，实现方式也是多种多样，但应当注意的是，职责链的每个节点应该各司其职，不要在某个职责链节点中调用相同职责链的其他节点，以免出现耦合，同时将事件处理流程的粒度进行细化。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1771,7 +1842,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1782,7 +1853,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>

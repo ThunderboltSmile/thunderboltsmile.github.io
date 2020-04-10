@@ -282,6 +282,290 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0--%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山羁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/14/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0--%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">PHP基础学习--正则表达式</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">2017-07-14</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>正则表达式用于判定一串文本中是否包含特定的片段或者符合某种规则，在各种程序中都有着至关重要的作用。<br>比如，使用内置的<code>preg_match</code>函数查看一段字符串中是否包含了“苹果”：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$p=<span class="string">"苹果"</span>;</span><br><span class="line">$str=<span class="string">"我喜欢吃苹果"</span>;</span><br><span class="line"><span class="keyword">if</span>(preg_match($p,$str))&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"匹配成功"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>PCRE库函数中，正则匹配模式使用<code>分隔符</code>与<code>元字符</code>组成;<br>分隔符可以是<code>非数字</code>、<code>非反斜线</code>、<code>非空格</code>的<code>任意字符</code>。<br>经常使用的分隔符是<code>正斜线(/)</code>、<code>hash符号(#)</code> 以及取<code>反符号(~)</code>;<br>例：</p>
+<pre><code>/foo bar/
+#^[^0-9]$#
+~php~</code></pre><p>如果模式中包含分隔符，则分隔符需要使用反斜杠（\）进行转义。<code>/http:\/\//</code></p>
+<p>如果模式中包含较多的分割字符，建议更换其他的字符作为分隔符，也可以采用<code>preg_quote</code>进行转义。<br>例：<code>$p = &#39;http://&#39;;$p = &#39;/&#39;.preg_quote($p, &#39;/&#39;).&#39;/&#39;;</code></p>
+<p>分隔符后面可以使用模式修饰符，模式修饰符包括：i, m, s, x等，例如使用i修饰符可以忽略大小写匹配;</p>
+<h4 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h4><p>构造正则表达式的方法和创建数学表达式的方法一样。也就是用多种元字符与操作符将小的表达式结合在一起来创建更大的表达式。正则表达式的组件可以是单个的字符、字符集合、字符范围、字符间的选择或者所有这些组件的任意组合。 </p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$</td>
+<td>匹配输入字符串的<code>结尾位置</code>。如果设置了RegExp对象的Multiline属性,则$也匹配‘\n’或‘\r’。要匹配$字符本身，请使用$。</td>
+</tr>
+<tr>
+<td>()</td>
+<td>标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符 \n之外的任何单字符。要匹配 .，请使用 .。</td>
+</tr>
+<tr>
+<td>[</td>
+<td>标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的表达式零次或者一次，或指明一个非贪婪限定符</td>
+</tr>
+<tr>
+<td>|转义字符</td>
+<td></td>
+</tr>
+<tr>
+<td>^</td>
+<td>输入字符串的开始位置，除非在方括号表达式中使用，此时表示不接受此类字符集合。</td>
+</tr>
+<tr>
+<td>{</td>
+<td>标记限定符表达式的开始</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配包括下划线的任何单词字符。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配任何非单词字符。等价于 ‘[^A-Za-z0-9_]’。</td>
+</tr>
+</tbody></table>
+<h4 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h4><p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有<em>或+或?或{n}或{n,}或{n,m}共6种。<br>其中`</em>、+和?<code>限定符都是贪婪的，因为它们会尽可能多的匹配文字，只有在它们的后面加上一个</code>?`就可以实现非贪婪或最小匹配。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或者多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的表达式一次或者多次（贪婪模式）</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的表达式零次或者一次（懒惰模式）</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n为一个非负整数，表示匹配的精确的限定次数</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n为一个非负整数，表示至少匹配n次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n,m均为非负整数，其中n&lt;=m，表示至少匹配n次之多匹配m次。</td>
+</tr>
+</tbody></table>
+<h4 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h4><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+</tbody></table>
+<h4 id="preg-match"><a href="#preg-match" class="headerlink" title="preg_match"></a>preg_match</h4><p>preg_match用来执行一个匹配，可以简单的用来判断模式是否匹配成功，或者取得一个匹配结果，他的返回值是匹配成功的次数0或者1，在匹配到1次以后就会停止搜索。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$subject = <span class="string">"my email is spark@imooc.com"</span>;</span><br><span class="line"><span class="comment">//在这里补充代码，实现正则匹配，并输出邮箱地址</span></span><br><span class="line">$pattern = <span class="string">'/[a-z]+@[a-z&#125;+\.[a-z]+/'</span>; </span><br><span class="line">preg_match($pattern,$subject,$matches);</span><br><span class="line">print_r($matches[<span class="number">0</span>]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="preg-match-all"><a href="#preg-match-all" class="headerlink" title="preg_match_all"></a>preg_match_all</h4><p>循环获取一个列表的匹配结果数组。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$str = <span class="string">"</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;item 1&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;item 2&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">    "</span>;</span><br><span class="line"><span class="comment">//在这里补充代码，实现正则匹配所有li中的数据</span></span><br><span class="line">$p=<span class="string">"/&lt;li&gt;(.*?)&lt;\/li&gt;/i"</span>;</span><br><span class="line">preg_match_all($p,$str,$matches);</span><br><span class="line">print_r($matches[<span class="number">1</span>]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>$matches结果排序为$matches[0]保存完整模式的所有匹配, $matches[1]保存第一个子组的所有匹配，以此类推。</p>
+<h4 id="搜索和替换"><a href="#搜索和替换" class="headerlink" title="搜索和替换"></a>搜索和替换</h4><p>正则表达式的搜索与替换在某些方面具有重要用途，比如调整目标字符串的格式，改变目标字符串中匹配字符串的顺序等。<br>例如我们可以简单的调整字符串的日期格式：</p>
+<pre><code>$string = &apos;April 15, 2014&apos;;
+$pattern = &apos;/(\w+) (\d+), (\d+)/i&apos;;
+$replacement = &apos;$3, ${1} $2&apos;;
+echo preg_replace($pattern, $replacement, $string); //结果为：2014, April 15</code></pre><p>其中${1}与$1的写法是等效的，表示第一个匹配的字串，$2代表第二个匹配的。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$str = <span class="string">'主要有以下几个文件：index.php, style.css, common.js'</span>;</span><br><span class="line"><span class="comment">//将目标字符串$str中的文件名替换后增加em标签</span></span><br><span class="line">$str = preg_replace(<span class="string">'/\w+\.\w+/i'</span>,<span class="string">'&lt;em&gt;$0&lt;/em&gt;'</span>,$str);</span><br><span class="line">print_r($str);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="实例：验证用户信息填写"><a href="#实例：验证用户信息填写" class="headerlink" title="实例：验证用户信息填写"></a>实例：验证用户信息填写</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$user = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'name'</span> =&gt; <span class="string">'spark1985'</span>,</span><br><span class="line">    <span class="string">'email'</span> =&gt; <span class="string">'spark@imooc.com'</span>,</span><br><span class="line">    <span class="string">'mobile'</span> =&gt; <span class="string">'13312345678'</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">//进行一般性验证</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">empty</span>($user)) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'用户信息不能为空'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (strlen($user[<span class="string">'name'</span>]) &lt; <span class="number">6</span>) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'用户名长度最少为6位'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用户名必须为字母、数字与下划线</span></span><br><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">'/^\w+$/i'</span>, $user[<span class="string">'name'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'用户名不合法'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//验证邮箱格式是否正确</span></span><br><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">'/^[\w\.]+@\w+\.\w+$/i'</span>, $user[<span class="string">'email'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'邮箱不合法'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//手机号必须为11位数字，且为1开头</span></span><br><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">'/^1\d&#123;10&#125;$/i'</span>, $user[<span class="string">'mobile'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'手机号不合法'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'用户信息验证成功'</span>;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/PHP/PHP%E5%9F%BA%E7%A1%80/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -724,7 +1008,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -735,7 +1019,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
