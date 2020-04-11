@@ -124,7 +124,7 @@
 
 
 
-  <title>svg-line&polyline&polygan | TheBlog</title>
+  <title>异步I/O | TheBlog</title>
   
 
 
@@ -281,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS/svg/svg-line/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/11/%E6%8A%80%E6%9C%AF/NODEJS/%E5%BC%82%E6%AD%A5IO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="山羁">
@@ -298,7 +298,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">svg-line&polyline&polygan</h2>
+          <h2 class="post-title" itemprop="name headline">异步I/O</h2>
         
 
         <div class="post-meta">
@@ -310,7 +310,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T00:00:00+08:00">2017-07-21</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-11T10:04:12+08:00">2020-04-11</time>
             
 
             
@@ -331,8 +331,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
-                    <span itemprop="name">前端开发</span>
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -349,9 +360,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/21/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS/svg/svg-line/#comments" itemprop="discussionUrl">
+                <a href="/2020/04/11/%E6%8A%80%E6%9C%AF/NODEJS/%E5%BC%82%E6%AD%A5IO/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/21/技术/杂记/前端开发/CSS/svg/svg-line/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/04/11/技术/NODEJS/异步IO/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,17 +390,11 @@
       
 
       
-        <h4 id="line"><a href="#line" class="headerlink" title="line"></a>line</h4><p>用于创建直线</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; version&#x3D;&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;line x1&#x3D;&quot;0&quot; y1&#x3D;&quot;0&quot; x2&#x3D;&quot;200&quot; y2&#x3D;&quot;200&quot;</span><br><span class="line">  style&#x3D;&quot;stroke:rgb(255,0,0);stroke-width:2&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
-<p>属性：</p>
-<ul>
-<li>x1,y1 属性定义线条的开始坐标</li>
-<li>x2,y2 属性定义线条的结束坐标<a id="more"></a>
-<h4 id="polyline"><a href="#polyline" class="headerlink" title="polyline"></a>polyline</h4>用于创建折线<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; version&#x3D;&quot;1.1&quot;&gt;</span><br><span class="line">  &lt;polyline points&#x3D;&quot;20,20 40,25 60,40 80,120 120,140 200,180&quot;</span><br><span class="line">  style&#x3D;&quot;fill:none;stroke:black;stroke-width:3&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
-属性：<br>points:定义一系列的坐标，以空格间隔，描述折线经过的点</li>
-</ul>
-<h4 id="polygan"><a href="#polygan" class="headerlink" title="polygan"></a>polygan</h4><p>用于定义多边形，polygan可以理解为定义了一条封闭的折线，即首尾相连的折线，所以在使用时，points属性的点一定要按照折线生成路径顺序来声明。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span>=<span class="string">"1.1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">polygon</span> <span class="attr">points</span>=<span class="string">"100,10 40,180 190,60 10,60 160,180"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h3 id="io的重要性">I/O的重要性</h3>
+<p>在网络服务领域，随着网络或者应用不断膨胀，分布式将成为常态，而前端页面响应速度与后端资源获取效率密切相关，后端资源获取的性能瓶颈往往就在I/O。nodejs支持的异步I/O特性在这种情境下具有相当的优势。</p>
+<a id="more"></a>
+<h3 id="同步异步的资源分配方式">同步/异步的资源分配方式</h3>
+
       
     </div>
     
@@ -404,12 +409,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/svg/" rel="tag"># svg</a>
-          
-        </div>
-      
 
       
       
@@ -419,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/20/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS/svg/svg-circle/" rel="next" title="svg-circle&&ellipse">
-                <i class="fa fa-chevron-left"></i> svg-circle&&ellipse
+              <a href="/2020/04/08/%E6%8A%80%E6%9C%AF/NODEJS/nodejs%E6%A8%A1%E5%9D%97/" rel="next" title="nodejs模块机制">
+                <i class="fa fa-chevron-left"></i> nodejs模块机制
               </a>
             
           </div>
@@ -428,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/22/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS/svg/svg-rect/" rel="prev" title="svg-rect">
-                svg-rect <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#line"><span class="nav-number">1.</span> <span class="nav-text">line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#polyline"><span class="nav-number">2.</span> <span class="nav-text">polyline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#polygan"><span class="nav-number">3.</span> <span class="nav-text">polygan</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#io的重要性"><span class="nav-number">1.</span> <span class="nav-text">I&#x2F;O的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步异步的资源分配方式"><span class="nav-number">2.</span> <span class="nav-text">同步&#x2F;异步的资源分配方式</span></a></li></ol></div>
             
 
           </div>
@@ -725,9 +720,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/21/%E6%8A%80%E6%9C%AF/%E6%9D%82%E8%AE%B0/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS/svg/svg-line/';
-          this.page.identifier = '2017/07/21/技术/杂记/前端开发/CSS/svg/svg-line/';
-          this.page.title = 'svg-line&polyline&polygan';
+          this.page.url = 'http://yoursite.com/2020/04/11/%E6%8A%80%E6%9C%AF/NODEJS/%E5%BC%82%E6%AD%A5IO/';
+          this.page.identifier = '2020/04/11/技术/NODEJS/异步IO/';
+          this.page.title = '异步I/O';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
