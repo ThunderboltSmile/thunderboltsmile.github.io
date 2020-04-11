@@ -107,9 +107,9 @@ menu_icons:
 
 # Schemes
 # scheme: Pisces
-# scheme: Mist
+scheme: Mist
 # scheme: Pisces
-scheme: Gemini
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -708,7 +708,7 @@ canvas_nest: false
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
 # three_waves
-three_waves: true
+three_waves: false
 # canvas_lines
 canvas_lines: false
 # canvas_sphere
@@ -783,7 +783,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest: true
+  canvas_nest: false
 
   # three
   three:
